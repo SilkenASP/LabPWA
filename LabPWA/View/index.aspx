@@ -34,19 +34,22 @@
 </head>
 <body>
     <form id="form1" class=" py-5 my-5" runat="server">
-        <div class="container-fluid" id="contendor-principal">
-            <div class="container container p-3 mb-5 w-75 bg-white rounded text-center" id="formulario">
+        <div class="container-fluid mb-5 py-5" id="contendor-principal">
+             <h1 class="text-white display-1 py-5 text-center">Bienvenido</h1>
+            <div class="container mb-5 w-75 bg-white rounded text-center" id="formulario">
+
                 <br />
-                <div class="row justify-content-center h4 ">
-                    <asp:Label Text="Correo o Usuario" ID="Userlbl" CssClass="col-xl-4 col-lg-4 col-md-3 col-sm-12 col-xs-12 col-form-label" runat="server" />
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                        <asp:TextBox cssClass="form-control form-text form-control-lg" ID="TextBox2" runat="server" />
+
+                <div class="row justify-content-center h4 px-0">
+                    <asp:Label Text="Numero de Cuenta" ID="nCuentalbl" CssClass="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-form-label" runat="server" />
+                    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 px-0">
+                        <asp:TextBox cssClass="form-control form-text form-control-lg" ID="nCuentaTxt" runat="server" />
                     </div>
                 </div>
                 
-                <div class="row justify-content-center h4 py-3">
-                    <asp:Label Text="Contraseña" ID="passwordlbl" CssClass="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-form-label" runat="server" />
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div class="row justify-content-center h4 py-3 px-0">
+                    <asp:Label Text="Contraseña" ID="passwordlbl" CssClass="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-form-label" runat="server" />
+                    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
                         <asp:TextBox cssClass="form-control form-text form-control-lg" ID="TextBox1" runat="server" />
                     </div>
                 </div> 

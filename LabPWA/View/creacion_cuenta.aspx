@@ -34,7 +34,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="container-fluid mb-5 py-5" id="contendor-principal">
+         <div class="container-fluid mb-5 py-5" id="contendor-principal">
              <h1 class="text-white display-1 py-5 text-center">Creacion de Cuenta</h1>
             <div class="container p-0 mb-5 w-100 bg-white rounded" id="formulario">
 
@@ -65,6 +65,21 @@
                         <asp:TextBox cssClass="form-control form-text form-control-lg" ID="Confirmed" runat="server" />
                     </div>
                 </div>
+
+                <div class="row justify-content-center h5 py-3">
+                    <asp:Label Text="numero de cuenta" ID="nCuentalbl" CssClass="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 col-form-label" runat="server" />
+                    <div class="col-xl-6 col-lg-6 col-md-4 col-sm-12 col-xs-12">
+                        <asp:TextBox cssClass="form-control form-text form-control-lg" ID="nCuenta" runat="server" />
+                    </div>
+                </div>
+
+                <div class="row justify-content-center h5 py-3">
+                    <asp:Label Text="Monto" ID="Label2" CssClass="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 col-form-label" runat="server" />
+                    <div class="col-xl-6 col-lg-6 col-md-4 col-sm-12 col-xs-12">
+                        <asp:TextBox cssClass="form-control form-text form-control-lg" ID="TextBox2" runat="server" />
+                    </div>
+                </div>
+
                 <br />
                 <div class="row justify-content-center">
                     <div class="col-xl-2 col-lg-2 col-md-4 col-sm-12 col-xs-12">
