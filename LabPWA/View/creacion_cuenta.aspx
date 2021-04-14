@@ -34,21 +34,35 @@
 </head>
 <body>
     <form id="form1" runat="server">
-         <div class="container-fluid mb-5 py-5" id="contendor-principal">
+           <div class="container-fluid mb-5 py-5" id="contendor-principal">
              <h1 class="text-white display-1 py-5 text-center">Creacion de Cuenta</h1>
             <div class="container p-0 mb-5 w-100 bg-white rounded" id="formulario">
 
-                <div class="row justify-content-center h5 pt-5">
-                    <asp:Label Text="Correo" ID="Correolbl" CssClass="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 col-form-label" runat="server" />
+                <div class="row justify-content-center h5 pt-5 pb-3">
+                    <asp:Label Text="tipo de cuenta" ID="Correolbl" CssClass="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 col-form-label" runat="server" />
                     <div class="col-xl-6 col-lg-6 col-md-4 col-sm-12 col-xs-12">
-                        <asp:TextBox cssClass="form-control form-text form-control-lg" ID="Correo" runat="server" />
+                        <asp:DropDownList ID="tipoCuenta" CssClass="form-control form-control-lg" runat="server">
+                            <asp:ListItem  Value="cuenta de ahorros" Text ="cuenta de ahorros" />
+                            <asp:ListItem  Value="cuenta corriente" Text="cuenta corriente." />
+                            <asp:ListItem  Value="depósito a plazo" Text="depósito a plazo" />
+                        </asp:DropDownList>
                     </div>
                 </div>
                 
                 <div class="row justify-content-center h5 py-3">
-                    <asp:Label Text="Usuario" ID="Usuariolbl" CssClass="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 col-form-label" runat="server" />
+                    <asp:Label Text="Nombre completo" ID="nombrelbl" CssClass="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 col-form-label" runat="server" />
                     <div class="col-xl-6 col-lg-6 col-md-4 col-sm-12 col-xs-12">
-                        <asp:TextBox cssClass="form-control form-text form-control-lg" ID="Usuario" runat="server" />
+                        <asp:TextBox cssClass="form-control form-text form-control-lg" ID="nombretxt" runat="server" />
+                    </div>
+                </div>
+
+                <div class="row justify-content-center h5 py-3">
+                    <asp:Label Text="Tasa de interes" ID="Label1" CssClass="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 col-form-label" runat="server" />
+                    <div class="col-xl-6 col-lg-6 col-md-4 col-sm-12 col-xs-12">
+                        <asp:DropDownList ID="tInteres" CssClass="form-control form-control-lg" runat="server">
+                            <asp:ListItem  Value="Pasiva" Text ="Tasa Pasiva" />
+                            <asp:ListItem  Value="Activa" Text="Tasa Activa" />
+                        </asp:DropDownList>
                     </div>
                 </div>
 
@@ -90,7 +104,6 @@
                     </div>
                 </div>
             </div>
-        </div>
     </form>
 </body>
 </html>
