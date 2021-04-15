@@ -10,7 +10,7 @@ namespace LabPWA.Repository
     public interface ICuenta
     {
         Response GetSaldo();
-        Task<Response> Depositar(Cuenta oCuenta , float monto);
+        Task<Response> Depositar(Cuenta oCuenta , float monto,int Estado);
         Task<Response> Retirar(float monto,ConfigurationClass oConfiguracion, Cuenta cuenta,int Estado);
         Response Proyeccion(int tiempo);
         Response GetData();

@@ -11,7 +11,7 @@ namespace LabPWA.Repository
     {
         private readonly Model1 db = new Model1();
 
-        public async Task<Response> Depositar(Cuenta oCuenta, float monto)
+        public async Task<Response> Depositar(Cuenta oCuenta, float monto,int Estado)
         { 
             try
             {
@@ -26,6 +26,7 @@ namespace LabPWA.Repository
                 Usuario user = db.Usuario.FirstOrDefault(x => x.id_Usuario.Equals(oCuenta.Usuario.id_Usuario));
                 var index = user.Cuenta.ToList().FindIndex(x => x.id_Cuenta.Equals(oCuenta.id_Cuenta));
                 user.Cuenta.ToList()[index].Saldo += monto;
+                user.Cuenta.ToList()[index].Activo = Estado;
                 user.Transaccion.Add(oTransaccion);
                 db.Entry(user).State = System.Data.Entity.EntityState.Modified;
                 var resp = await db.SaveChangesAsync();
@@ -140,6 +141,14 @@ namespace LabPWA.Repository
                         Message = "Se excede el limite permitido"
                     };
                 }
+                if (cuenta.Saldo-monto<0)
+                {
+                    return new Response
+                    {
+                        IsSuccess = false,
+                        Message = "No puede retirar una cantidad mayor a su saldo actual"
+                    };
+                }
                 Usuario user = db.Usuario.FirstOrDefault(x => x.id_Usuario.Equals(cuenta.Usuario.id_Usuario));
                 var index = user.Cuenta.ToList().FindIndex(x => x.id_Cuenta.Equals(cuenta.id_Cuenta));
                 user.Cuenta.ToList()[index].Saldo -= monto;
@@ -152,6 +161,17 @@ namespace LabPWA.Repository
                     NuevoSaldo = user.Cuenta.ToList()[index].Saldo,
                     NumeroCuenta = cuenta.NumeroCuenta
                 });
+                if (Estado==0)
+                {
+                    user.Transaccion.Add(new Transaccion
+                    {
+                        Accion="Desactivo",
+                        Fecha=DateTime.Now,
+                        Monto=0,
+                        NuevoSaldo=0,
+                        NumeroCuenta=cuenta.NumeroCuenta,
+                    });
+                }
                 db.Entry(user).State = System.Data.Entity.EntityState.Modified;
                 var resp = await db.SaveChangesAsync();
                 if (resp>0)
