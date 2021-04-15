@@ -27,11 +27,15 @@ namespace LabPWA.View
             }
         }
 
-        protected void btnDepositar_Click(object sender, EventArgs e)
+        protected async void btnDepositar_Click(object sender, EventArgs e)
         {
             float monto = float.Parse(this.montotxt.Text);
             var index = this.drpCuenta.SelectedIndex;
-            db.Depositar(LoggedUser.Cuenta.ToList()[index],monto);
+            var resp = await db.Depositar(LoggedUser.Cuenta.ToList()[index],monto);
+            if (resp.IsSuccess)
+            {
+                Session["LoggedUser"] = resp.Result;
+            }
         }
 
         protected void btnRetirar_Click(object sender, EventArgs e)
@@ -72,6 +76,7 @@ namespace LabPWA.View
             {
                 Session["RetiroDiario"] = double.Parse(Session["RetiroDiario"].ToString()) + monto;
                 Session["UltimoRetiro"] = DateTime.Now;
+                Session["LoggedUser"] = resp.Result;
             }
             else
             {

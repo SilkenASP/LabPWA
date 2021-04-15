@@ -34,7 +34,8 @@ namespace LabPWA.Repository
                     return new Response
                     {
                         IsSuccess = true,
-                        Message = "El deposito ha sido satisfactorio"
+                        Message = "El deposito ha sido satisfactorio",
+                        Result = user
                     };
                 }
                 else
@@ -158,7 +159,8 @@ namespace LabPWA.Repository
                     return new Response
                     {
                         IsSuccess = true,
-                        Message = "El deposito fue exitoso"
+                        Message = "El retiro fue exitoso",
+                        Result=user
                     };
                 }
                 else
