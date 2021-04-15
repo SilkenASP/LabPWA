@@ -15,7 +15,10 @@ namespace LabPWA.View
         private readonly IUsuario db = new RUsuario();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["LoggedUser"]!=null)
+            {
+                Session["LoggedUser"] = null;
+            }
         }
 
         protected void Unnamed_Click(object sender, EventArgs e)

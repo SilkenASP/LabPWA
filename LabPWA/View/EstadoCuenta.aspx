@@ -22,6 +22,7 @@
             <asp:GridView ID="grdCuentas" CssClass="table" runat="server" AutoGenerateColumns="false">
                 <Columns>
                     <asp:BoundField DataField="NumeroCuenta" HeaderText="Numero de cuenta" ReadOnly="true" />
+                    <asp:BoundField DataField="Tipo" HeaderText="Tipo de cuenta" ReadOnly="true" />
                     <asp:BoundField DataField="Saldo" HeaderText="Saldo" ReadOnly="true" />
                     <asp:BoundField DataField="Interes" HeaderText="Interes" ReadOnly="true" />
                     <asp:BoundField DataField="Activo" HeaderText="Activo" ReadOnly="true" />

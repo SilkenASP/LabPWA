@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegisterUserWebForm.aspx.cs" Inherits="LabPWA.View.RegisterUserWebForm" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegisterUserWebForm.aspx.cs" Inherits="LabPWA.View.RegisterUserWebForm" Async="true" %>
 
 <!DOCTYPE html>
 
@@ -51,8 +51,8 @@
                 <br />
 
                 <div class="row">
-                    <asp:Label ID="Label3" CssClass="col-6" runat="server" Text="Tasa de interes:"></asp:Label>
-                    <asp:TextBox ID="txtTasaInteres" CssClass="col-6" runat="server"></asp:TextBox>
+                    <asp:Label ID="Label3" CssClass="col-6" Visible="false" runat="server" Text="Tasa de interes:"></asp:Label>
+                    <asp:TextBox ID="txtTasaInteres" Visible="false" CssClass="col-6" runat="server"></asp:TextBox>
                 </div>
                 <br />
                 <div class="row">

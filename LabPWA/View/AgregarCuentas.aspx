@@ -7,8 +7,8 @@
 
             <div>
                 <div class="row">
-                    <asp:Label ID="Label3" CssClass="col-6" runat="server" Text="Tasa de interes:"></asp:Label>
-                    <asp:TextBox ID="txtTasaInteres" CssClass="col-6" runat="server"></asp:TextBox>
+                    <asp:Label ID="Label3" CssClass="col-6" runat="server" Visible="false" Text="Tasa de interes:"></asp:Label>
+                    <asp:TextBox ID="txtTasaInteres" CssClass="col-6" Visible="false" runat="server"></asp:TextBox>
                 </div>
                 <br />
                 <div class="row">

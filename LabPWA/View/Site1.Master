@@ -37,6 +37,21 @@
              box-shadow: 10px 15px 20px black;
         }
     </style>
+    <script type = "text/javascript">
+        function Confirm() {
+            if (Page_ClientValidate()) {
+                var confirm_value = document.createElement("INPUT");
+                confirm_value.type = "hidden";
+                confirm_value.name = "confirm_value";
+                if (confirm("Do you confirm?")) {
+                    confirm_value.value = "Yes";
+                } else {
+                    confirm_value.value = "No";
+                }
+                document.forms[0].appendChild(confirm_value);
+            }
+        }
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -58,6 +73,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="AgregarCuentas.aspx">Agregar cuenta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.aspx">Cerrar sesion</a>
                     </li>
                 </ul>
              </div>

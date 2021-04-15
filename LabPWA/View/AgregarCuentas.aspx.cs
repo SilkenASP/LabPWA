@@ -40,6 +40,14 @@ namespace LabPWA.View
                 NumeroCuenta = rnd.Next(100) + LoggedUser.Nombre.Substring(0, 3) + rnd.Next(100),
                 Tipo = this.DropDownList1.SelectedValue.ToString()
             };
+            if (oCuenta.Saldo>0)
+            {
+                oCuenta.Activo = 1;
+            }
+            else
+            {
+                oCuenta.Activo = 0;
+            }
             Transaccion oTransaccion = new Transaccion
             {
                 Accion = "Inicio de cuenta",
@@ -61,13 +69,25 @@ namespace LabPWA.View
             {
                 this.Label2.Visible = true;
                 this.txtSaldoInicial.Visible = true;
+                this.txtSaldoInicial.Text = "0"; 
+                this.txtTasaInteres.Visible = true;
+                this.Label3.Visible = true;
+            }
+            else if (tipoCuenta == "Cuenta corriente")
+            {
+                this.Label2.Visible = true;
+                this.txtSaldoInicial.Visible = true;
                 this.txtSaldoInicial.Text = "0";
+                this.txtTasaInteres.Visible = false;
+                this.Label3.Visible = false;
             }
             else
             {
                 this.Label2.Visible = false;
                 this.txtSaldoInicial.Visible = false;
                 this.txtSaldoInicial.Text = "0";
+                this.txtTasaInteres.Visible = true;
+                this.Label3.Visible = true;
             }
         }
     }

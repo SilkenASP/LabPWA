@@ -51,6 +51,42 @@ namespace LabPWA.View
         protected global::System.Web.UI.WebControls.DropDownList drpCuenta;
 
         /// <summary>
+        /// lblFechaInicio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFechaInicio;
+
+        /// <summary>
+        /// fechaInicio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar fechaInicio;
+
+        /// <summary>
+        /// lblFechaFin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFechaFin;
+
+        /// <summary>
+        /// fechaFin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar fechaFin;
+
+        /// <summary>
         /// btnRetirar control.
         /// </summary>
         /// <remarks>
