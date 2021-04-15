@@ -55,8 +55,8 @@
                 </div> 
 
                 <br />
-                <asp:Button cssClass="btn btn-outline-info btn-lg" Text="Login" runat="server" /> &nbsp;
-                <asp:Button cssClass="btn btn-outline-success btn-lg" Text="crear una cuenta" runat="server" />
+                <asp:Button cssClass="btn btn-outline-info btn-lg" Text="Login" runat="server" OnClick="Unnamed_Click" /> &nbsp;
+                <asp:Button cssClass="btn btn-outline-success btn-lg" Text="crear una cuenta" runat="server" ID="btnRegister" OnClick="btnRegister_Click"/>
                 <br />
                 <br />
             </div>

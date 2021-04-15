@@ -40,9 +40,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-          <nav class="navbar navbar-expand-lg px-xl-5 px-lg-5 navbar-info bg-info">
-            <div class="container-fluid">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg navbar-info">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -57,9 +56,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="Historial.aspx">Historial</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="AgregarCuentas.aspx">Agregar cuenta</a>
+                    </li>
                 </ul>
              </div>
-            </div>
            </nav>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
