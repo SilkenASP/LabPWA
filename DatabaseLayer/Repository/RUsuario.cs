@@ -65,7 +65,7 @@ namespace DatabaseLayer.Repository
                 return new Response
                 {
                     IsSuccess = false,
-                    Message = ex.Message
+                    Message = ex.InnerException.Message
                 };
             }
         }

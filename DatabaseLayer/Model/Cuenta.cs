@@ -24,6 +24,8 @@ namespace DatabaseLayer.Model
         public int? Activo { get; set; }
         [StringLength(50)]
         public string Tipo { get; set; }
+        [StringLength(50)]
+        public string TiempoVigencia { get; set; }
 
         public virtual Usuario Usuario { get; set; }
     }

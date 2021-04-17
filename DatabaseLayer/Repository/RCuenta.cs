@@ -73,6 +73,8 @@ namespace LabPWA.Repository
             throw new NotImplementedException();
         }
 
+        
+
         public async Task<Response> Post(Cuenta oCuenta, Usuario oUsuario, Transaccion oTransaccion)
         {
             try
@@ -112,9 +114,35 @@ namespace LabPWA.Repository
             }
         }
 
-        public Response Proyeccion(int tiempo)
+        public Response Proyeccion(int tiempo, Cuenta oCuenta)
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (tiempo <= 0)
+                {
+                    return new Response
+                    {
+                        IsSuccess = false,
+                        Message = "El tiempo es invalido"
+                    };
+                }
+                float InteresProyectado;
+                InteresProyectado = (float)(oCuenta.Saldo * oCuenta.Interes * tiempo);
+                return new Response
+                {
+                    IsSuccess = true,
+                    Result = InteresProyectado,
+                    Message = "La proyeccion para " + tiempo + " año/s es de $" + InteresProyectado
+                };
+            }
+            catch (Exception ex)
+            {
+                return new Response
+                {
+                    IsSuccess = false,
+                    Message = ex.Message
+                };
+            }
         }
 
         public async Task<Response> Retirar(float monto,ConfigurationClass oConfiguracion,Cuenta cuenta,int Estado)
