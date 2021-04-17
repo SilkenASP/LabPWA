@@ -28,12 +28,15 @@ namespace LabPWA.View
             var resp = db.Login(this.nCuentaTxt.Text, this.TextBox1.Text);
             if (resp.IsSuccess)
             {
+                Session["RetiroDiario"] = 0;
+                Session["UltimoRetiro"] = DateTime.Now;
                 Session["LoggedUser"] = resp.Result;
                 Response.Redirect("EstadoCuenta.aspx");
             }
             else
             {
-
+                string script = string.Format("alert('{0}');", resp.Message);
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", script, true);
             }
         }
 

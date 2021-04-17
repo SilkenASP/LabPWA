@@ -32,6 +32,12 @@ namespace LabPWA.View
 
         protected async void btnDepositar_Click(object sender, EventArgs e)
         {
+            if (float.Parse(this.montotxt.Text) == 0)
+            {
+                string script = string.Format("alert('{0}');", "La cantidad a retirar es invalida");
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", script, true);
+                return;
+            }
 
             float monto = float.Parse(this.montotxt.Text);
             var index = this.drpCuenta.SelectedIndex;
@@ -41,6 +47,7 @@ namespace LabPWA.View
                 Session["LoggedUser"] = resp.Result;
                 string script = string.Format("alert('{0}');", resp.Message);
                 ClientScript.RegisterStartupScript(this.GetType(), "alert", script, true);
+                Response.Redirect("EstadoCuenta.aspx");
             }
             else
             {
@@ -55,6 +62,12 @@ namespace LabPWA.View
         }
         private async void RetirarDinero()
         {
+            if (float.Parse(this.montotxt.Text)==0)
+            {
+                string script = string.Format("alert('{0}');", "La cantidad a retirar es invalida");
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", script, true);
+                return;
+            }
             int Estado = 1;
             float monto = float.Parse(this.montotxt.Text);
             int index = this.drpCuenta.SelectedIndex;
@@ -115,20 +128,14 @@ namespace LabPWA.View
             if (IsPostBack)
             {
                 this.cuenta = (sender as DropDownList).SelectedIndex;
-                //if (drpCuenta.SelectedValue == "Deposito a plazo")
-                //{
-                //    this.lblFechaFin.Visible = true;
-                //    this.lblFechaInicio.Visible = true;
-                //    this.fechaFin.Visible = true;
-                //    this.fechaInicio.Visible = true;
-                //}
-                //else
-                //{
-                //    this.lblFechaFin.Visible = false;
-                //    this.lblFechaInicio.Visible = false;
-                //    this.fechaFin.Visible = false;
-                //    this.fechaInicio.Visible = false;
-                //}
+                if (drpCuenta.SelectedValue == "Cuenta corriente")
+                {
+                    this.btnRetirar.Enabled = false;
+                }
+                else
+                {
+                    this.btnRetirar.Enabled = true;
+                }
             }
         }
     }

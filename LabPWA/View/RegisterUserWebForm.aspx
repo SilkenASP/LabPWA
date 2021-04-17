@@ -49,12 +49,6 @@
                     <asp:TextBox ID="txtNombre" CssClass="col-6" runat="server"></asp:TextBox>
                 </div>
                 <br />
-
-                <div class="row">
-                    <asp:Label ID="Label3" CssClass="col-6" Visible="false" runat="server" Text="Tasa de interes:"></asp:Label>
-                    <asp:TextBox ID="txtTasaInteres" Visible="false" CssClass="col-6" runat="server"></asp:TextBox>
-                </div>
-                <br />
                 <div class="row">
                     <asp:Label ID="Label4" CssClass="col-6" runat="server" Text="Usuario: "></asp:Label>
                     <asp:TextBox ID="txtUsername" CssClass="col-6" runat="server"></asp:TextBox>
@@ -77,6 +71,11 @@
                 <div class="row">
                     <asp:Label ID="Label2" CssClass="col-6" runat="server" Text="Saldo inicial:" Visible="false"></asp:Label>
                     <asp:TextBox ID="txtSaldoInicial" Text="0" CssClass="col-6" runat="server" Visible="false"></asp:TextBox>
+                </div>
+                <br />
+                <div class="row">
+                    <asp:Label ID="lblintereses" CssClass="col-6" Visible="false" runat="server" Text="Tiempo"></asp:Label>
+                    <asp:DropDownList ID="drpIntereses" CssClass="col-6" AutoPostBack="true" Visible="false" runat="server" OnSelectedIndexChanged="drpIntereses_SelectedIndexChanged"></asp:DropDownList>
                 </div>
                 <br />
                 <div class="row">
